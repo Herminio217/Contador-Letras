@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class teste {
+
+	public static void main(String[] args)
+	{
+		String palavra = "";
+		int qntd = 0, cont = 0, cont_vogais = 0, cont_consoantes = 0;
+		// declaração das variáveis
+		
+		Scanner p = new Scanner(System.in);
+		palavra = p.nextLine();
+		// criando o objeto p para capturar uma infromação externa
+		// nextLine() serve para armazenar um valor externo em String
+		
+		qntd = palavra.length()-1;
+		// o length()-1 serviu para pegar a quantidade total de letras do que foi armazenado na variável palabra
+		
+		for (cont = 0; cont <= qntd; cont++) 
+		// estrutura de repetição para ir analisando letra por letra se é vogal ou consoante
+		{
+			char c = palavra.charAt(cont);
+			if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
+			{
+				cont_vogais++;
+			}
+			else
+			{
+				cont_consoantes++;
+			}
+		}
+		System.out.println("Vogais: " + cont_vogais + " Consoantes: " + cont_consoantes);
+	}
+}
